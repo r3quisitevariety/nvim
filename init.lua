@@ -19,6 +19,8 @@ vim.opt.softtabstop = 2
 vim.opt.linebreak = true
 vim.opt.autoread = true
 vim.opt.termguicolors = true
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
 
 -- keymaps
 vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<cr>", {
