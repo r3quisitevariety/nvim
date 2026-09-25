@@ -59,11 +59,21 @@ local transparent_groups = {
 	"CursorLineNr",
 	"LineNrAbove",
 	"LineNrBelow",
+	"GitSignsAdd",
+	"GitSignsChange",
+	"GitSignsDelete",
+	"GitSignsChangedelete",
+	"GitSignsTopdelete",
+	"GitSignsUntracked",
+	"GitSignsCurrentLineBlame",
 }
 
 local function set_transparent_background()
 	for _, group in ipairs(transparent_groups) do
-		vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+		local highlight = vim.api.nvim_get_hl(0, { name = group, link = false })
+		highlight.bg = "NONE"
+		highlight.ctermbg = "NONE"
+		vim.api.nvim_set_hl(0, group, highlight)
 	end
 end
 
