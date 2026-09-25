@@ -13,6 +13,7 @@ return {
 			"javascript",
 			"typescript",
 			"go",
+			"typst",
 		},
 		highlight = { enable = true },
 	},
