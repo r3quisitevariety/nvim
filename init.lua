@@ -27,6 +27,8 @@ vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<cr>", {
 	desc = "Toggle word wrap",
 })
 
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 -- 1g instead of 1gt for tabs
 for tab = 1, 9 do
 	vim.keymap.set("n", tab .. "g", "<cmd>tabnext " .. tab .. "<cr>", {
@@ -52,6 +54,9 @@ local transparent_groups = {
 	"SignColumn",
 	"StatusLine",
 	"StatusLineNC",
+	"TabLine",
+	"TabLineFill",
+	"TabLineSel",
 	"EndOfBuffer",
 	"NeoTreeNormal",
 	"NeoTreeNormalNC",
@@ -82,6 +87,13 @@ local function set_transparent_background()
 			highlight.ctermbg = "NONE"
 			vim.api.nvim_set_hl(0, group, highlight)
 		end
+	end
+
+	for _, group in ipairs(vim.fn.getcompletion("BufferLine", "highlight")) do
+		local highlight = vim.api.nvim_get_hl(0, { name = group, link = false })
+		highlight.bg = "NONE"
+		highlight.ctermbg = "NONE"
+		vim.api.nvim_set_hl(0, group, highlight)
 	end
 end
 
