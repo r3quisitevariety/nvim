@@ -73,6 +73,15 @@ local function set_transparent_background()
 		vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
 	end
 
+	for _, prefix in ipairs({ "BufferLine", "SnacksPicker", "Telescope" }) do
+		for _, group in ipairs(vim.fn.getcompletion(prefix, "highlight")) do
+			local highlight = vim.api.nvim_get_hl(0, { name = group, link = false })
+			highlight.bg = "NONE"
+			highlight.ctermbg = "NONE"
+			vim.api.nvim_set_hl(0, group, highlight)
+		end
+	end
+
 	vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#2ec27e", bg = "NONE" })
 	vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#3584e4", bg = "NONE" })
 	vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#e01b24", bg = "NONE" })
@@ -83,7 +92,16 @@ local function set_transparent_background()
 end
 
 set_transparent_background()
+vim.schedule(set_transparent_background)
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = set_transparent_background,
+	callback = function()
+		vim.schedule(set_transparent_background)
+	end,
+})
+
+vim.api.nvim_create_autocmd("WinNew", {
+	callback = function()
+		vim.schedule(set_transparent_background)
+	end,
 })
