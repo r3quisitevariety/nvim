@@ -15,7 +15,20 @@ return {
 		explorer = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		picker = { enabled = true },
+		-- makes picker transparent
+		picker = {
+			enabled = true,
+			on_show = function()
+				for _, win in ipairs(vim.api.nvim_list_wins()) do
+					for group in vim.wo[win].winhighlight:gmatch(":(Snacks[%w_]+)") do
+						local highlight = vim.api.nvim_get_hl(0, { name = group, link = false })
+						highlight.bg = "NONE"
+						highlight.ctermbg = "NONE"
+						vim.api.nvim_set_hl(0, group, highlight)
+					end
+				end
+			end,
+		},
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },

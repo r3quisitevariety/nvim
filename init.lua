@@ -75,6 +75,14 @@ local function set_transparent_background()
 		highlight.ctermbg = "NONE"
 		vim.api.nvim_set_hl(0, group, highlight)
 	end
+
+	for group, highlight in pairs(vim.api.nvim_get_hl(0, {})) do
+		if group:match("^Telescope") then
+			highlight.bg = "NONE"
+			highlight.ctermbg = "NONE"
+			vim.api.nvim_set_hl(0, group, highlight)
+		end
+	end
 end
 
 set_transparent_background()
