@@ -19,6 +19,7 @@ return {
 			html = { "prettier" },
 			css = { "prettier" },
 			kdl = { "kdlfmt" },
+			typst = { "typstyle" },
 		},
 	},
 	-- still see if this actually works, havent set up lsp yet
