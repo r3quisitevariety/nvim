@@ -4,7 +4,7 @@ return {
 	---@type oil.SetupOpts
 	opts = {},
 	keys = {
-		{ "<leader>oi", "<cmd>Oil<CR>", desc = "Open Oil" },
+		{ "<leader>e", "<cmd>Oil<CR>", desc = "Open Oil" },
 	},
 	-- Optional dependencies
 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
