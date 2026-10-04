@@ -10,7 +10,7 @@ return {
 			--nix = { "nixfmt" },
 			nix = { "alejandra" },
 			lua = { "stylua" },
-			go = { "gofmt" }, -- already comes with go binary
+			go = { "gofmt" }, -- comes with go binary
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },

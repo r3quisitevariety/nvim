@@ -22,12 +22,10 @@ vim.opt.termguicolors = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 
--- keymaps
+-- general keymaps (rest are scattered throughout plugins/)
 vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<cr>", {
 	desc = "Toggle word wrap",
 })
-
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- 1g instead of 1gt for tabs
 for tab = 1, 9 do
@@ -45,6 +43,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "VimResume" }, {
 })
 
 -- appearance
+-- removes ~ around editor
 vim.opt.fillchars:append({ eob = " " })
 
 local transparent_groups = {
