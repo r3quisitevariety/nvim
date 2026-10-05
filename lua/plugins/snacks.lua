@@ -46,7 +46,7 @@ return {
 			desc = "File Explorer",
 		},
 		{
-			"<leader>gg",
+			"<leader>gd",
 			function()
 				Snacks.picker.git_diff()
 			end,
