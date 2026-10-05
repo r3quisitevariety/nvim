@@ -37,11 +37,11 @@ vim.lsp.config("typst", {
 })
 
 vim.lsp.config("nix", {
-	cmd = { "nil" },
+	cmd = { "nixd" },
 	filetypes = { "nix" },
-	root_markers = { "flake.nix", "flake.lock", ".git", "default.nix" },
+	root_markers = { { "flake.nix", "flake.lock", "default.nix" }, ".git" },
 	settings = {
-		["nil"] = {
+		["nixd"] = {
 			nix = {
 				flake = {
 					enable = true,
