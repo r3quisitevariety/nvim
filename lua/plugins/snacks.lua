@@ -52,6 +52,13 @@ return {
 			end,
 			desc = "Git Diff (Hunks)",
 		},
+		{
+			"<leader>sd",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Diagnostics",
+		},
 		-- LSP
 		{
 			"gd",
