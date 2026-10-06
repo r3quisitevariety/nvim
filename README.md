@@ -48,7 +48,7 @@ leader key is space.
 | `<leader>gd` | Go to symbol definition |
 | `<leader>gr` | List symbol references |
 
-note: i also use `grr` (**r**eference), `gra` (**a**ction), and `grn` (re**n**ame); these are shrimply integrated into neovims core. `gd` (highlights definition) is also an honorable mention, though not necessarily lsp-related.
+note: i also use `grr` (**r**eference), `gra` (**a**ction), and `grn` (re**n**ame); these are already integrated into neovims core. `gd` (highlights definition) is also an honorable mention, though not necessarily lsp-related.
 
 ### Git
 
