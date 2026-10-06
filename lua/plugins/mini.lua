@@ -14,7 +14,7 @@ return {
 			mappings = {
 				basic = true,
 				option_toggle_prefix = [[\]],
-				windows = true,
+				windows = false,
 				move_with_alt = true,
 			},
 			autocommands = {
