@@ -1,32 +1,15 @@
 return {
 	"folke/trouble.nvim",
-	opts = {
-		keys = {
-			["<cr>"] = function(view)
-				view:jump()
-				vim.schedule(function()
-					vim.lsp.buf.code_action({
-						apply = true,
-						filter = function(a)
-							return true
-						end,
-					})
-					vim.schedule(function()
-						require("trouble").focus()
-					end)
-				end)
-			end,
-		},
-	},
+	opts = {}, -- for default options, refer to the configuration section for custom setup.
 	cmd = "Trouble",
 	keys = {
 		{
-			"<leader>xx",
-			"<cmd>Trouble diagnostics toggle<cr>",
+			"<leader>xX",
+			"<cmd>Trouble diagnostics toggle position=float<cr>",
 			desc = "Diagnostics (Trouble)",
 		},
 		{
-			"<leader>xX",
+			"<leader>xx",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
 		},
