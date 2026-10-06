@@ -1,6 +1,7 @@
 return {
 	"nanozuki/tabby.nvim",
-	config = function()
+	---@type TabbyConfig
+	opts = {
 		-- configs...
-	end,
+	},
 }
