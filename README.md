@@ -1,10 +1,14 @@
 
 # nvim config
 
+personal neovim config consisting of notable plugins like mini, snacks, oil, telescope, toggle-term, trouble, flash, conform, and treesitter.
+
 - utilizes [lazy.nvim](https://github.com/folke/lazy.nvim) 
 - plugins live in `lua/plugins/` which are auto-imported by lazy.nvim
 - configuration for lsp & lazy.nvim's bootstrap lives in `lua/config/` 
-- top level `init.lua` for everything else (cant be bothered to organize it)
+- keymaps, autocommands, and options also live in `lua/config/`
+
+
 
 try it out by running:
 ```nix
@@ -21,17 +25,16 @@ alternatively, run `git clone https://github.com/r3quisitevariety/nvim` in `~/.c
 leader key is space.
 
 ### General
-
 | Key | Action |
 |---|---|
-| `<leader>e` | Toggle file tree |
+| `<leader>e` | Oil             |
+| `<C-e>`     | snacks' file-tree | 
 | `<C-Space>` | Toggle terminal |
 | `<leader>w` | Toggle word wrap |
 | `1g` ... `9g` | Go to tab 1 ... 9 |
 | `q` | Flash jump |
 
 ### Search
-
 | Key | Action |
 |---|---|
 | `<leader>ff` | Find files |
@@ -39,11 +42,20 @@ leader key is space.
 | `<leader>fb` | List buffers |
 | `<leader>fh` | Search help tags |
 
+### LSP
+| Key | Action |
+|---|---|
+| `<leader>gd` | Go to symbol definition |
+| `<leader>gr` | List symbol references |
+
+note: i also use `grr` (**r**eference), `gra` (**a**ction), and `grn` (re**n**ame); these are shrimply integrated into neovims core. `gd` (highlights definition) is also an honorable mention, though not necessarily lsp-related.
+
 ### Git
 
 | Key | Action |
 |---|---|
 | `<leader>lg` | Open LazyGit |
+| `<leader>gg` | Git diff in picker |
 | `]h` / `[h` | Next / previous changed hunk |
 | `<leader>hp` | Preview changed hunk |
 | `<leader>hb` | Blame current line |
@@ -58,19 +70,6 @@ leader key is space.
 | `<leader>pp` | Toggle project notes |
 | `<leader>pb` | Toggle branch notes |
 | `<leader>pf` | Toggle notes for the current file |
-
-### LSP
-
-| Key | Action |
-|---|---|
-| `K` | Show documentation and signatures |
-| `gd` | Go to symbol definition |
-| `gr` | List symbol references |
-| `<leader>rn` | Rename symbol and references |
-| `<leader>ca` | Open code actions and refactorings |
-| `[d` / `]d` | Previous / next diagnostic |
-
-note that formatting is handled separately by conform.
 
 ### Obsidian
 
@@ -91,4 +90,3 @@ Four things to check (in order):
 ## Notes
 
 - Clipboard is synced with the system (`unnamedplus`).
-- Indent width = 2 spaces.
