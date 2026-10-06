@@ -37,50 +37,18 @@ return {
 		words = { enabled = true },
 	},
 
+  --stylua: ignore start
 	keys = {
-		{
-			"<C-e>",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "File Explorer",
-		},
-		{
-			"<leader>gg",
-			function()
-				Snacks.picker.git_diff()
-			end,
-			desc = "Git Diff (Hunks)",
-		},
-		{
-			"<leader>sd",
-			function()
-				Snacks.picker.diagnostics()
-			end,
-			desc = "Diagnostics",
-		},
+		-- replaced telescopes implementation with snacks cuz its better
+		{"<leader>ff", function() Snacks.picker.files() end, desc = "Find files",},
+		{"<leader>fg", function() Snacks.picker.grep() end, desc = "Live grep (ripgrep)",},
+		{"<C-e>", function() Snacks.explorer() end, desc = "File Explorer",},
+		{"<leader>gg", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)",},
+		{"<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics",},
 		-- LSP
-		{
-			"<leader>gd",
-			function()
-				Snacks.picker.lsp_definitions()
-			end,
-			desc = "Goto Definition",
-		},
-		{
-			"<leader>gr",
-			function()
-				Snacks.picker.lsp_references()
-			end,
-			nowait = true,
-			desc = "References",
-		},
-		{
-			"<leader>ss",
-			function()
-				Snacks.picker.lsp_symbols()
-			end,
-			desc = "LSP Symbols",
-		},
+		{"<leader>gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition",},
+		{"<leader>gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References",},
+		{"<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols",},
 	},
+	--stylua: ignore end
 }

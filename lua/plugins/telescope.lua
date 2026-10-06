@@ -1,22 +1,9 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	version = "*",
+	-- needed so obsidian chooses telescope over mini
+	lazy = false,
 	keys = {
-		-- replaced telescopes implementation with snacks cuz its better
-		{
-			"<leader>ff",
-			function()
-				Snacks.picker.files()
-			end,
-			desc = "Find files",
-		},
-		{
-			"<leader>fg",
-			function()
-				Snacks.picker.grep()
-			end,
-			desc = "Live grep (ripgrep)",
-		},
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
 	},
