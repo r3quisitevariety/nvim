@@ -22,6 +22,7 @@ alternatively, run `git clone https://github.com/r3quisitevariety/nvim` in `~/.c
 
 ## Keymaps
 
+an incomprehensive list of keymaps (just the ones i use frequently)\
 leader key is space.
 
 ### General
@@ -35,12 +36,13 @@ leader key is space.
 | `q` | Flash jump |
 
 ### Search
+all of these options utilizes snacks' picker.
 | Key | Action |
 |---|---|
 | `<leader>ff` | Find files |
 | `<leader>fg` | Live grep |
 | `<leader>fb` | List buffers |
-| `<leader>fh` | Search help tags |
+| `<leader>fh` | Search nvim docs |
 
 ### LSP
 | Key | Action |
@@ -78,6 +80,17 @@ note: i also use `grr` (**r**eference), `gra` (**a**ction), and `grn` (re**n**am
 | `<leader>od` | Open daily notes picker |
 | `<leader>dt` | Insert date-time stamp |
 
+### Diagnostics
+- `]d` and `[d` to jump between diagnostics
+- `<leader>xx` for trouble in current buffer; `<leader>xX` for whole project space
+
+### Misc 
+- `:mksession` utilizes mini.sessions to create persistent sessions
+- `<leader>sa` for surround; i.e `<leader>saiw(` --> surround add inner word "(' — more info is in `mini.lua`
+- `Alt + hjkl` to move text/selected text around 
+- `<leader>dr` = reload direnv
+
+
 ## Adding a language
 
 Four things to check (in order):
@@ -90,3 +103,4 @@ Four things to check (in order):
 ## Notes
 
 - Clipboard is synced with the system (`unnamedplus`).
+- I format on save :3
