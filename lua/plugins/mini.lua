@@ -34,5 +34,6 @@ return {
 			-- Whether to disable showing non-error feedback
 			silent = false,
 		})
+		require("mini.sessions").setup()
 	end,
 }
