@@ -18,30 +18,37 @@
 
     toolList = system:
       with pkgsFor.${system}; [
-        # editor + fuzzy finding / search
+        # basic stuff
         neovim
         fzf
         ripgrep
         fd
-
-        # lsps
-        # make sure you have toolchains for go, rust, etc in your system for things to fully work
+        git
+        lua
+        luarocks
+        tree-sitter
+        # lsp stuff
+        # make sure you have toolchains for go, rust, typst, etc in your system for things to fully work
         # i omitted them here for the sake of minimizing closure size
         lua-language-server
         rust-analyzer
         gopls
         nil
+        nixd
         typescript-language-server
         harper
-
-        # formatters
+        # formatting stuff
         stylua
         prettier
         nixfmt
         alejandra
-
-        # plugin manager bootstrap (lazy.nvim clones itself with git)
-        git
+        kdlfmt
+        # stuff needed for typst-preview.nvim
+        typstyle
+        tinymist
+        websocat
+        curl
+        xdg-utils
       ];
 
     toolsEnv = system:
