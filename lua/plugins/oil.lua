@@ -2,7 +2,11 @@ return {
 	"stevearc/oil.nvim",
 	---@module 'oil'
 	---@type oil.SetupOpts
-	opts = {},
+	opts = {
+		win_options = {
+			signcolumn = "yes:2",
+		},
+	},
 	keys = {
 		{ "<leader>e", "<cmd>Oil<CR>", desc = "Open Oil" },
 	},
