@@ -14,3 +14,5 @@ vim.opt.termguicolors = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 vim.opt.fillchars:append({ eob = " " }) -- removes "~" around editor
+vim.opt.splitright = true
+vim.opt.splitbelow = true
