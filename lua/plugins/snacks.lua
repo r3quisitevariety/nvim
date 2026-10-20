@@ -42,7 +42,7 @@ return {
 		-- replaced telescopes implementation with snacks cuz its better
 		{"<leader>ff", function() Snacks.picker.files() end, desc = "Find files",},
 		{"<leader>fg", function() Snacks.picker.grep() end, desc = "Live grep (ripgrep)",},
-		{"<C-e>", function() Snacks.explorer() end, desc = "File Explorer",},
+		--{"<C-e>", function() Snacks.explorer() end, desc = "File Explorer",},
 		{"<leader>gg", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)",},
 		{"<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics",},
 		-- LSP
