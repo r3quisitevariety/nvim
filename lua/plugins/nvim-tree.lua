@@ -21,6 +21,10 @@ return {
 						close = true, -- if tree is closed in one tab, close in others
 					},
 				},
+				update_focused_file = {
+					enable = true,
+					update_root = { enable = true }, -- also re-root to the file's dir
+				},
 			})
 		end,
 	},
