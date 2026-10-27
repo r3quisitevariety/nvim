@@ -14,6 +14,8 @@ return {
 				view = {
 					width = 35,
 					side = "left",
+					number = true,
+					relativenumber = true,
 				},
 				tab = {
 					sync = {
