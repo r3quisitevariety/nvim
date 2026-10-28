@@ -6,7 +6,7 @@ return {
 		{
 			"<leader>dt",
 			function()
-				local date_str = os.date("###### *%A, %B %-d, %Y, %I:%M %p*")
+				local date_str = os.date("###### %A, %B %-d, %Y, %I:%M %p")
 				vim.api.nvim_put({ date_str }, "l", true, true)
 			end,
 			desc = "Insert date-time stamp",
