@@ -15,7 +15,7 @@ return {
 		opts.options = vim.tbl_deep_extend("force", opts.options or {}, {
 			theme = theme,
 			section_separators = "",
-			component_separators = "|",
+			component_separators = { left = "", right = "" },
 		})
 		return opts
 	end,
