@@ -8,7 +8,7 @@ return {
 		},
 	},
 	keys = {
-		{ "<C-e>", "<cmd>Oil<CR>", desc = "Open Oil" },
+		{ "-", "<cmd>Oil<CR>", desc = "Open Oil" },
 	},
 	-- Optional dependencies
 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
